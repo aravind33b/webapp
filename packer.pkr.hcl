@@ -70,17 +70,17 @@ build {
   provisioner "shell" {
     inline = [
       "sudo yum update -y",
-      "sudo yum install -y postgresql-server postgresql-contrib",
-      "sudo postgresql-setup --initdb --unit postgresql",
-      "sudo systemctl enable postgresql",
-      "sudo systemctl start postgresql",
+      // "sudo yum install -y postgresql-server postgresql-contrib",
+      // "sudo postgresql-setup --initdb --unit postgresql",
+      // "sudo systemctl enable postgresql",
+      // "sudo systemctl start postgresql",
     ]
   }
 
   // PostgreSQL user and database creation and assign perms
-  provisioner "shell" {
-    script = "./db.sh"
-  }
+  // provisioner "shell" {
+  //   script = "./db.sh"
+  // }
 
   provisioner "file" {
     source      = "./webapp"

@@ -1,15 +1,16 @@
 [Unit]
 Description=Go Web Application
-After=network.target
+Requires=gcloudsql.service
+After=network.target gcloudsql.service
 
 [Service]
 User=csye6225
 Group=csye6225
-Environment=DBHOST=
-Environment=DBPORT=
-Environment=DBUSER=
-Environment=DBPASS=
-Environment=DBNAME=
+# Environment=DBHOST=
+# Environment=DBPORT=
+# Environment=DBUSER=
+# Environment=DBPASS=
+# Environment=DBNAME=
 ExecStart=/usr/local/bin/webapp
 
 [Install]
